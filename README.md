@@ -1,10 +1,10 @@
-# Video Metadata API 📹
+# Video Metadata API 
 
-A video metadata management API that i built with **Node.js**, **TypeScript**, **Express**, and **Prisma (PostgreSQL)**.
+A video metadata management API built with **Node.js**, **TypeScript**, **Express**, and **Prisma (PostgreSQL)**.
 
 ---
 
-## Features ✨
+## Features 
 
 - Fetch video metadata from a given file path (via `ffmpeg`)
 - Basic CRUD structure prepared for extension
@@ -14,7 +14,7 @@ A video metadata management API that i built with **Node.js**, **TypeScript**, *
 
 ---
 
-## Setup 🛠️
+## Setup 
 
 ```bash
 # Clone the repo
@@ -29,41 +29,50 @@ npx prisma migrate dev --name init
 
 # Run in development mode
 npm run dev
+```
 
-## Authentication 🔑
+## Authentication 
 
 JWT tokens can be generated using the utility:
 
 ```bash
 node --loader ts-node/esm src/tokenTest.ts
 Use the token in requests as:
-
+```
 Makefile
 
 Authorization: Bearer <token>
 
-## API Endpoints 🛣️
-Method	Path	Description
-POST	/api/videos/metadata	Fetches and returns video metadata.
-POST /api/videos/metadata
+## API Endpoints
 
-Body: { "filePath": "path/to/video.mp4" }
+| **Method** | **Path** | **Description** |
+|-------------|-----------|-----------------|
+| POST | `/api/videos/metadata` | Fetches and returns video metadata. |
+
+### Request Body
+```json
+{ "filePath": "path/to/video.mp4" }
+```
 
 Response: JSON metadata extracted with ffmpeg
 
 (Other CRUD endpoints are scaffolded for extension.)
 
-## Scripts ⚙️
-Script	Command	Description
-dev	npm run dev	Run development server with auto-reload.
-build	npm run build	Build project into JavaScript (for production).
-start	npm start	Start compiled project (production mode).
-test	npm test	Run Jest unit tests.
-Project Structure 📁
-CSS
+## Scripts 
+| **Script** | **Command** | **Description** |
+|-------------|-------------|-----------------|
+| dev | `npm run dev` | Run development server with auto-reload. |
+| build | `npm run build` | Build project into JavaScript (for production). |
+| start | `npm start` | Start compiled project (production mode). |
+| test | `npm test` | Run Jest unit tests. |
 
+
+## Project Structure
+
+```bash
 prisma/
   schema.prisma
+
 src/
   controllers/
     videoController.ts
@@ -76,5 +85,6 @@ src/
     auth.ts
   app.ts
   server.ts
+
 tests/
   video.test.ts
