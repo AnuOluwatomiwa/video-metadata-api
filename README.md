@@ -18,7 +18,7 @@ A video metadata management API that i built with **Node.js**, **TypeScript**, *
 
 ```bash
 # Clone the repo
-git clone <your-repo-url>
+git clone https://github.com/AnuOluwatomiwa/video-metadata-api
 cd video-metadata-api
 
 # Install dependencies
